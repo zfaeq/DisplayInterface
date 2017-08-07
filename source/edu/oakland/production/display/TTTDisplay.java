@@ -1,6 +1,7 @@
 package edu.oakland.production.dispaly;
+package edu.oakland.production.middlewareSubs;
 
-public class TTTDispaly {
+public class TTTDisplay {
 	//private TTTMiddleware middleware;
 	private int rowNumber;
 	private int columnNumber;
@@ -34,7 +35,7 @@ public class TTTDispaly {
 		
 		int x = (n+1)/2;
 		int y = 0;
-		int [2] temp= {x,y};
+		int [] temp= {x,y};
 		 return temp;
 		
 	}
