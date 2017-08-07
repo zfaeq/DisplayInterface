@@ -11,7 +11,9 @@ public class TTTDisplay {
 	private char[][]boardStatus;
 	private boolean isWinOrDraw;
 	
-	
+	//for test
+	boolean goodVal;
+	String testInput;
 	
 	
 	public TTTDisplay(TTTMiddleware ref){
@@ -19,38 +21,56 @@ public class TTTDisplay {
 		//TODO print instructions
 	}
 	
+	public String getInput(){
+		return testInput;
+	}
+	public boolean getGoodVal(){
+		return goodVal;
+	}
+	public int getRowInput(){
+		return rowNumber;
+	}
+	public int getColumnInput(){
+		return columnNumber;
+	}
+	
+
+	
 	public void placeMarkOnBoard(char mark){
-		boolean goodVal = false;
+		goodVal = false;
 		playerMark = mark;
 		
 		Scanner reader = new Scanner(System.in);
 		
-		int n = -99;
-		char let = 'p';
+		int n;
+		char let;
 		
-		while(goodVal){
+		
+		
+		while(!goodVal){
 			
 			do{
 				
 				System.out.print(mark+" enter a number : ");
-				n = reader.nextInt(); 
-				System.out.println();
+				n = reader.nextInt(); 				
 				if( !nInRange(n) ){
-					System.out.println(mark+"Try new number : ");
+					System.out.println("Number out of range, try again!!! ");
 				}
-			}while ( nInRange(n) );
-
+			}while ( !nInRange(n) );
+			rowNumber = n-1;
+		
 			do{
 				System.out.print(mark+" enter a Letter : ");
 				let = reader.next().charAt(0);
 				let =  Character.toLowerCase(let);
-				System.out.println();
-				if(seeIfGoodChar(let)){
-					System.out.print(mark+"Try new letter : ");
+				
+				if(!seeIfGoodChar(let)){
+					System.out.println("Letter out of range try again!!! ");
 				}
-			}while(seeIfGoodChar(let));
-			goodVal = middleware.placeMarkOnBoard(changeLetToNum(let), n-1, mark);
-		}
+			}while(!seeIfGoodChar(let));
+			columnNumber = changeLetToNum(let); 
+			goodVal = middleware.placeMarkOnBoard(columnNumber , rowNumber , mark);
+ 		} 
 		
 	}
 	
@@ -64,7 +84,7 @@ public class TTTDisplay {
 			case 'c':
 				return 2;
 			default :
-				return -99;
+				return 4;
 		}
 	}
 	
@@ -82,7 +102,7 @@ public class TTTDisplay {
 		}
 	}
 	private boolean nInRange(int n){
-		if (n<4 && n>0){
+		if (n>0 && n < 4){
 			return true;
 		}
 		return false;
