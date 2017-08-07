@@ -18,7 +18,7 @@ public class TTTMiddleware {
 		rowNumber = rowValue;
 		colNumber = colValue;
 		markChar = markValue;
-		ref.placeMarkAsSelected(rowNumber, colNumber, markChar);
+		//ref.placeMarkAsSelected(rowNumber, colNumber, markChar);
 	}
 	
 	/* provide method to check for win or draw; this involves
@@ -28,8 +28,8 @@ public class TTTMiddleware {
 	which means a tie; all these conditions lead to "game over"; */
 	public char checkForWinOrDraw(){
 		//provide Java code to check for win or draw for all possibilities;
-		isThereAWinOrDraw = (result of analysis of all rows, columns adn diags);
-		return isThereAWinOrDraw;
+		//isThereAWinOrDraw = (result of analysis of all rows, columns adn diags);
+		return 'w';
 		
 		//provide Java to print out win or draw; if neither, print nothing;
 		
