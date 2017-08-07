@@ -1,6 +1,7 @@
-package edu.oakland.production.display;
+package edu.oakland.production.dispaly;
+package edu.oakland.production.middlewareSubs;
 
-public class TTTDispaly {
+public class TTTDisplay {
 	//private TTTMiddleware middleware;
 	private int rowNumber;
 	private int columnNumber;
@@ -9,12 +10,37 @@ public class TTTDispaly {
 	private boolean isWinOrDraw;
 	
 	
+	
+	
 	TTTDisplay(TTTMiddleware ref){
-		middleware = ref;
+		middleware = ref;		
+		//TODO print instructions
 	}
 	
 	public void placeMarkOnBoard(char mark){
+		boolean goodVal = false;
+		playerMark = mark;
 		
+		Scanner reader = new Scanner(System.in);
+		
+		/*while(!goodVal){
+			this.printCurrentBoard();
+			System.out.println(mark+" enter a number : ");
+			int n = reader.nextInt(); 
+			
+		}*/
+	}
+	
+	public int[] getXYVal(int n){
+		
+		int x = (n+1)/2;
+		int y = 0;
+		int [] temp= {x,y};
+		 return temp;
+		
+	}
+	public char markPlaced(){
+		return playerMark;
 	}
 	
 	public boolean checkforWinOrDraw(){
