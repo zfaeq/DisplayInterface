@@ -46,8 +46,28 @@ public class TTTDisplay {
 	}
 	
 	public boolean checkforWinOrDraw(){
+<<<<<<< HEAD
 		return true;
 		
+=======
+		Char status = middleware.checkForWinOrDraw();
+		switch(status) {
+			case 'X' :  
+				System.out.println("X wins");
+				return true;
+			case 'O' :  
+				System.out.println("O wins");
+				return true;
+			case 'D' :
+				System.out.println("Draw");
+				return true;
+			case 'N' :
+				return false;
+			default :
+				System.out.println("Invalid status");
+				return true;
+		}
+>>>>>>> c02beb4f8a2c4bf118ab400739dec609504f6e8b
 	}
 	public void  printCurrentBoard(){
 		//Get array from  middleware, return 3d array
