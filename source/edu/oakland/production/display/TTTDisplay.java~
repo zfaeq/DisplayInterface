@@ -13,7 +13,7 @@ public class TTTDispaly {
 		middleware = ref;
 	}
 	
-	public void placeMarkOnBoard(int row, int column,char mark){
+	public void placeMarkOnBoard(char mark){
 		
 	}
 	
