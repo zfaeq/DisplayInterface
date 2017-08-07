@@ -14,7 +14,7 @@ public class TTTDisplay {
 	
 	
 	
-	TTTDisplay(TTTMiddleware ref){
+	public TTTDisplay(TTTMiddleware ref){
 		middleware = ref;		
 		//TODO print instructions
 	}
@@ -25,25 +25,70 @@ public class TTTDisplay {
 		
 		Scanner reader = new Scanner(System.in);
 		
-		/*while(!goodVal){
-			this.printCurrentBoard();
-			System.out.println(mark+" enter a number : ");
-			int n = reader.nextInt(); 
+		int n = -99;
+		char let = 'p';
+		
+		while(goodVal){
 			
-		}*/
+			do{
+				
+				System.out.print(mark+" enter a number : ");
+				n = reader.nextInt(); 
+				System.out.println();
+				if( !nInRange(n) ){
+					System.out.println(mark+"Try new number : ");
+				}
+			}while ( nInRange(n) );
+
+			do{
+				System.out.print(mark+" enter a Letter : ");
+				let = reader.next().charAt(0);
+				let =  Character.toLowerCase(let);
+				System.out.println();
+				if(seeIfGoodChar(let)){
+					System.out.print(mark+"Try new letter : ");
+				}
+			}while(seeIfGoodChar(let));
+			goodVal = middleware.placeMarkOnBoard(changeLetToNum(let), n-1, mark);
+		}
+		
 	}
 	
-	public int[] getXYVal(int n){
-		
-		int x = (n+1)/2;
-		int y = 0;
-		int [] temp= {x,y};
-		 return temp;
-		
+	//*******************helper methods for placeMarkOnBoard
+	private int changeLetToNum(char let){
+		switch(let) {
+			case 'a': 
+				return 0;
+			case 'b':
+				return 1;
+			case 'c':
+				return 2;
+			default :
+				return -99;
+		}
 	}
-	public char markPlaced(){
-		return playerMark;
+	
+	private boolean seeIfGoodChar(char let){
+		
+		switch(let) {
+			case 'a': 
+				return true;
+			case 'b':
+				return true;
+			case 'c':
+				return true;
+			default :
+				return false;
+		}
 	}
+	private boolean nInRange(int n){
+		if (n<4 && n>0){
+			return true;
+		}
+		return false;
+	}
+	//********************end helper methods for placeMarkOnBoard
+	
 	
 	public boolean checkforWinOrDraw(){
 
@@ -78,10 +123,8 @@ public class TTTDisplay {
 	        System.out.println("\t -------");
 	        System.out.println("\tC "+ b[2][0] + "|" +b[2][1] + "|" + b[2][2]);	
 	}
-	
-	public void changePlayer(char mark){
-		
-	}
+
+
 	
 	
 }
