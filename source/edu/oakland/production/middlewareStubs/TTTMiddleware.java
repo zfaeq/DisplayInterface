@@ -2,23 +2,15 @@ package edu.oakland.production.middlewareStubs;
 
 public class TTTMiddleware {
 	
-	private TTTDatanbase dataBase;
-	private int rowNumber;
-	private int colNUmber;
-	private markChar;
-	private boolean isBoardFull;
-	private boolean isThereAWinOrDraw;
-	
-	public TTTMiddleware(TTTDatabase ref) {
-		dataBase = ref;
+	//private TTTDatanbase dataBase;
+	public TTTMiddleware() {
+		
 	}
 	
 	// method to select position
 	public boolean placeMarkOnBoard(int rowValue, int colValue, char markValue) {
-		rowNumber = rowValue;
-		colNumber = colValue;
-		markChar = markValue;
-		//ref.placeMarkAsSelected(rowNumber, colNumber, markChar);
+		return true;
+		
 	}
 	
 	/* provide method to check for win or draw; this involves
@@ -27,17 +19,14 @@ public class TTTMiddleware {
 	(3) if (1) & (2) above are flase, check to see if Board is full
 	which means a tie; all these conditions lead to "game over"; */
 	public char checkForWinOrDraw(){
-		//provide Java code to check for win or draw for all possibilities;
-		//isThereAWinOrDraw = (result of analysis of all rows, columns adn diags);
+		
 		return 'w';
 		
-		//provide Java to print out win or draw; if neither, print nothing;
 		
-		//if win or draw, provide Java code to end game;
 	}
 	
 	//provide a method to print the Board status;
 	public char[][] getBoard(){
-		
+		return null;
 	}
 }

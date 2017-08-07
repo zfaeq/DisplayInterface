@@ -1,8 +1,10 @@
 package edu.oakland.production.display;
-import edu.oakland.production.middlewareSubs.*;
+import edu.oakland.production.middlewareStubs.*;
+
+import java.util.Scanner;
 
 public class TTTDisplay {
-	//private TTTMiddleware middleware;
+	private TTTMiddleware middleware;
 	private int rowNumber;
 	private int columnNumber;
 	private char playerMark;
@@ -44,12 +46,12 @@ public class TTTDisplay {
 	}
 	
 	public boolean checkforWinOrDraw(){
-		
+		return true;
 		
 	}
 	public void  printCurrentBoard(){
 		//Get array from  middleware, return 3d array
-		char[][] b;//getboard from middleware.
+		char[][] b = middleware.getBoard();//getboard from middleware.
 	        System.out.println("\t  1 2 3");
 	        System.out.println("\tA "+ b[0][0] + "|" +b[0][1] + "|" + b[0][2]);
 	        System.out.println("\t -------");
