@@ -1,5 +1,5 @@
-package edu.oakland.production.dispaly;
-package edu.oakland.production.middlewareSubs;
+package edu.oakland.production.display;
+import edu.oakland.production.middlewareSubs.*;
 
 public class TTTDisplay {
 	//private TTTMiddleware middleware;
