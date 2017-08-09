@@ -1,5 +1,5 @@
 package edu.oakland.production.display;
-import edu.oakland.production.middlewareStubs.*;
+import edu.oakland.production.middleware.*;
 
 import java.util.Scanner;
 
