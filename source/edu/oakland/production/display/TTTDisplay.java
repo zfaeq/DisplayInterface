@@ -142,7 +142,7 @@ public class TTTDisplay {
 	//********************end helper methods for placeMarkOnBoard
 	
 	
-	public boolean checkforWinOrDraw(){
+	public boolean checkForWinOrDraw(){
 
 
 	
