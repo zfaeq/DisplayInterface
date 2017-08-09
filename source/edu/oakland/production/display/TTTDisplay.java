@@ -52,7 +52,7 @@ public class TTTDisplay {
 		
 			
 			columnNumber =  getleterFromUser(mark, reader);
-			goodVal = middleware.placeMarkOnBoard(columnNumber , rowNumber , mark);
+			goodVal = middleware.placeMarkOnBoard(mark, rowNumber ,columnNumber);
  		} 
 		
 	}

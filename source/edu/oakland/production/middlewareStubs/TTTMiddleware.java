@@ -8,7 +8,7 @@ public class TTTMiddleware {
 	}
 	
 	// method to select position
-	public boolean placeMarkOnBoard(int rowValue, int colValue, char markValue) {
+	public boolean placeMarkOnBoard( char markValue, int colValue, int rowValue ) {
 		return true;
 		
 	}
