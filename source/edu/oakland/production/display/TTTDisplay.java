@@ -76,30 +76,41 @@ public class TTTDisplay {
 	
 	//*******************helper methods for placeMarkOnBoard
 	private int changeLetToNum(char let){
+		int num;
 		switch(let) {
 			case 'a': 
-				return 0;
+				num =  0;
+				break; 
 			case 'b':
-				return 1;
+				num = 1;
+				break;
 			case 'c':
-				return 2;
+				num = 2;
+				break;
 			default :
-				return 4;
+				num = 4;
+				break;
 		}
+		return num;
 	}
 	
 	private boolean seeIfGoodChar(char let){
-		
+		boolean tempB;
 		switch(let) {
 			case 'a': 
-				return true;
+				tempB = true;
+				break;
 			case 'b':
-				return true;
+				tempB =  true;
+				break;
 			case 'c':
-				return true;
+				tempB =  true;
+				break;
 			default :
-				return false;
+				tempB =  false;
+				break;
 		}
+		return tempB;
 	}
 	private boolean nInRange(int n){
 		if (n>0 && n < 4){
