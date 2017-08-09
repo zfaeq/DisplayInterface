@@ -42,24 +42,46 @@ public class TTTDisplay {
 		
 		Scanner reader = new Scanner(System.in);
 		
-		int n;
-		char let;
 		
 		
 		
 		while(!goodVal){
 			
-			do{
+			
+			rowNumber = getNumberFromUser(mark, reader);
+		
+			
+			columnNumber =  getleterFromUser(mark, reader);
+			goodVal = middleware.placeMarkOnBoard(columnNumber , rowNumber , mark);
+ 		} 
+		
+	}
+	
+	//*******************helper methods for placeMarkOnBoard
+	private int getNumberFromUser(char mark , Scanner reader){
+		int n = -99;
+		int count = 0; 
+		do{
 				
 				System.out.print(mark+" enter a number : ");
-				n = reader.nextInt(); 				
+				//reader.next();
+				if(reader.hasNextInt()){
+					n = reader.nextInt(); 	
+				}else{
+					reader.next();
+				}				
 				if( !nInRange(n) ){
 					System.out.println("Number out of range, try again!!! ");
 				}
-			}while ( !nInRange(n) );
-			rowNumber = n-1;
+				count++;
+		}while ( !nInRange(n) && count<=5 );
 		
-			do{
+		return n-1;
+	}
+	
+	private int getleterFromUser(char mark , Scanner reader){
+		char let;
+		do{
 				System.out.print(mark+" enter a Letter : ");
 				let = reader.next().charAt(0);
 				let =  Character.toLowerCase(let);
@@ -67,14 +89,13 @@ public class TTTDisplay {
 				if(!seeIfGoodChar(let)){
 					System.out.println("Letter out of range try again!!! ");
 				}
-			}while(!seeIfGoodChar(let));
-			columnNumber = changeLetToNum(let); 
-			goodVal = middleware.placeMarkOnBoard(columnNumber , rowNumber , mark);
- 		} 
+		}while(!seeIfGoodChar(let));
+		
+		return changeLetToNum(let);
 		
 	}
 	
-	//*******************helper methods for placeMarkOnBoard
+	
 	private int changeLetToNum(char let){
 		int num;
 		switch(let) {

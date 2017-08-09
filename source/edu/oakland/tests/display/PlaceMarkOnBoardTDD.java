@@ -25,7 +25,7 @@ public class PlaceMarkOnBoardTDD {
 	
 	
 	@Test
-	public void testInputs(){
+	public void testInputsSDS(){
 		String st = "2"+"\n"+"b";
 		InputStream in  = new ByteArrayInputStream(st.getBytes());
 		System.setIn(in);
@@ -35,8 +35,39 @@ public class PlaceMarkOnBoardTDD {
 		assertTrue(display.getGoodVal());
 	}
 	
-	//TODO addmore testss
 	
+	@Test
+	public void testInputsMultipleTries(){
+		String st = "5"+"\n"+"3"+"\n"+"b";
+		InputStream in  = new ByteArrayInputStream(st.getBytes());
+		System.setIn(in);
+		display.placeMarkOnBoard('x');
+		assertEquals(2, display.getRowInput());
+		assertEquals(1, display.getColumnInput());
+		assertTrue(display.getGoodVal());
+	}
+	
+	@Test
+	public void testInputsMultipleTriesAlfa(){
+		String st = "3"+"\n"+"\n"+"l"+"\n"+"k"+"\n"+"b";
+		InputStream in  = new ByteArrayInputStream(st.getBytes());
+		System.setIn(in);
+		display.placeMarkOnBoard('x');
+		assertEquals(2, display.getRowInput());
+		assertEquals(1, display.getColumnInput());
+		assertTrue(display.getGoodVal());
+	}
+	
+	@Test
+	public void testInputsBAD(){
+		String st = "a"+"\n"+"3"+"\n"+"b";
+		InputStream in  = new ByteArrayInputStream(st.getBytes());
+		System.setIn(in);
+		display.placeMarkOnBoard('x');
+		assertEquals(2, display.getRowInput());
+		//assertEquals(1, display.getColumnInput());
+		//assertTrue(display.getGoodVal());
+	}
 	
 	
 	
