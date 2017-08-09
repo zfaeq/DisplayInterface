@@ -48,10 +48,10 @@ public class TTTDisplay {
 		while(!goodVal){
 			
 			
-			rowNumber = getNumberFromUser(mark, reader);
+			columnNumber  = getNumberFromUser(mark, reader);
 		
 			
-			columnNumber =  getleterFromUser(mark, reader);
+			rowNumber =  getleterFromUser(mark, reader);
 			goodVal = middleware.placeMarkOnBoard(mark, rowNumber ,columnNumber);
 			if(!goodVal){
 				System.out.println("Spot Taken!!!");
