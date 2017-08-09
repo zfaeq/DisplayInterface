@@ -147,6 +147,7 @@ public class TTTDisplay {
 
 	
 		char status = middleware.checkForWinOrDraw();
+		status = Character.toUpperCase(status);
 		switch(status) {
 			case 'X' :  
 				System.out.println("X wins");
