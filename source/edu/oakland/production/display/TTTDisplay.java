@@ -53,6 +53,10 @@ public class TTTDisplay {
 			
 			columnNumber =  getleterFromUser(mark, reader);
 			goodVal = middleware.placeMarkOnBoard(mark, rowNumber ,columnNumber);
+			if(!getGoodVal){
+				System.out.println("Spot Taken!!!");
+			}
+			
  		} 
 		
 	}
