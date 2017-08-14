@@ -4,7 +4,7 @@ package edu.oakland.tests.display;
 import org.junit.*;
 import static org.junit.Assert.*;
 import edu.oakland.production.display.*;
-import edu.oakland.production.middlewareStubs.*;
+import edu.oakland.production.middleware.*;
 //import edu.oakland.helper.*;
 import java.io.*;
 
