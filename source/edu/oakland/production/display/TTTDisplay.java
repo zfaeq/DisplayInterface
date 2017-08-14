@@ -38,7 +38,7 @@ public class TTTDisplay {
 	
 	public void placeMarkOnBoard(char mark){
 		goodVal = false;
-		playerMark = mark;
+		playerMark = Character.toUpperCase(mark);
 		
 		Scanner reader = new Scanner(System.in);
 		
@@ -51,9 +51,9 @@ public class TTTDisplay {
 			
 		
 			
-			rowNumber =  getleterFromUser(mark, reader);
-			columnNumber  = getNumberFromUser(mark, reader);
-			goodVal = middleware.placeMarkOnBoard(mark, rowNumber ,columnNumber);
+			rowNumber =  getleterFromUser(playerMark, reader);
+			columnNumber  = getNumberFromUser(playerMark, reader);
+			goodVal = middleware.placeMarkOnBoard(playerMark, rowNumber ,columnNumber);
 			if(!goodVal){
 				System.out.println("Spot Taken!!!");
 			}
@@ -65,7 +65,7 @@ public class TTTDisplay {
 	//*******************helper methods for placeMarkOnBoard
 	private int getNumberFromUser(char mark , Scanner reader){
 		int n = -99;
-		int count = 0; 
+		
 		do{
 				
 				System.out.print(mark+" enter a number : ");
@@ -78,8 +78,8 @@ public class TTTDisplay {
 				if( !nInRange(n) ){
 					System.out.println("Number out of range, try again!!! ");
 				}
-				count++;
-		}while ( !nInRange(n) && count<=5 );
+				
+		}while ( !nInRange(n)  );
 		
 		return n-1;
 	}
